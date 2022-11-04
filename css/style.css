@@ -1,0 +1,131 @@
+body{
+    margin-top: 20px;
+}
+
+header{
+    border-top:solid 0.5px #efefef;
+    border-bottom:solid 0.5px #efefef;
+}
+main{
+    margin: 20px 0px;
+}
+footer{
+    border-top:solid 0.5px #efefef;
+    border-bottom:solid 0.5px #efefef;
+}
+
+.logo{
+    height: 48px;
+    width: 48px;
+    margin-right: 60px;
+}
+.menu-icon{
+    height: 32px;
+    width: 32px;
+    margin-right: 30px;
+}
+
+.menu-icon:hover{
+    background-color:#cce9ff;
+    border-radius: 50%;
+}
+
+.icon{
+    height: 64px;
+    width: 64px;
+}
+.right{
+    float: right;
+}
+.pointer{
+    cursor: pointer;
+}
+.msg-box{
+    height: 450px; 
+    overflow:auto;   
+}
+.msg-list li{
+    border: solid 1px #eee;
+    margin-left: -10px;
+    margin-bottom: 20px;
+    list-style: none;
+    padding: 10px;
+}
+.msg{
+    font-size:1.2em;
+}
+.msg:hover {
+    background-color: #f7f7f7;
+}
+
+.dropdown{
+    display: inline;
+}
+
+.hamburger {
+    display: none;
+}
+
+.main_nav {
+    display:inline;
+}
+
+@media screen and (max-width:768px){
+    /* タブレット用CSS -------------- */
+    .hamburger {
+        display: block;
+        flex: 0 0 32px;
+        align-self: center;
+        margin-left: 16px;
+        text-align: center;
+        color: #fff;
+        float: right;
+    }
+}
+
+@media screen and (max-width:768px){
+    /* タブレット用CSS -------------- */
+    .main_nav {
+        display:none;
+    }
+}
+
+#nav {
+    padding: 24px 24px 0 24px;
+    background: #000;
+    color: white;
+}
+#nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#nav li a {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #114d60;
+    text-decoration: none;
+    color: #fff;
+}
+#nav li a:hover {
+    background: #0e3e4d;
+}
+
+/* ドロワーナビゲーションの必須スタイル */
+#nav {
+    position: fixed;
+    right: -330px;
+    top: 0;
+    width: 270px;
+    height: 100%;
+}
+
+/* ドロワーが開かれたときのスタイル */
+.drawer-show {
+    transform: translate3d(-300px, 0, 0);
+}
+
+/* 開く・閉じるアニメーション */
+#wrapper, #nav {
+    transition: transform 0.3s;
+}

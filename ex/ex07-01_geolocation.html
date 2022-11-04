@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>7-01_geolocation</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>あなたはいまどこ？</h1>
+            <h2>現在地の緯度・経度を取得する</h2>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <p>あなたはいま</p>
+                <p id="loc" class="position"></p>
+                <p>の場所にいます。ちなみに精度は半径 <span id="accuracy" class="position"> mです。</span></p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>JavaScript Samples</p>
+        </div>
+    </footer>
+    <script src="../js/common/jquery-3.6.0.min.js"></script>
+    <script>
+        'use strict';
+
+        function success(pos) {
+            const lat = pos.coords.latitude;
+            const lng = pos.coords.longitude;
+            const accuracy = pos.coords.accuracy;
+
+            $('#loc').text(`緯度:${lat}　経度:${lng}`);
+            $('#accuracy').text(accuracy);
+        }
+
+        function fail(error) {
+            alert('位置情報の取得に失敗しました。エラーコード:' + error.code);
+        }
+
+        navigator.geolocation.getCurrentPosition(success, fail);
+    </script>
+</body>
+
+</html>
